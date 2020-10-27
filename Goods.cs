@@ -40,13 +40,38 @@ namespace Lab5
                 amount--;
                 return money - price;
             }
-
-
         }
 
+        override public bool Equals(object o)
+        {
+            if ((o == null) || !GetType().Equals(o.GetType()))
+            {
+                return false;
+            }
+            else
+            {
+                Goods s = (Goods)o;
+                return (s.name == name) && (s.price == price);
+            }
+        }
+        public override int GetHashCode()
+        {
+            HashCode hash = new HashCode();
+            hash.Add(base.GetHashCode());
+            hash.Add(name);
+            hash.Add(price);
+            return hash.ToHashCode();
+        }
+
+        public override string ToString()
+        {
+            return $"{amount} of {name} goods, {price}$ each";
+        }
 
     }
-    
+
+
+
 
     abstract class Product: Goods
     {
@@ -57,6 +82,12 @@ namespace Lab5
         protected Product() { }
         public Product(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue) => (name, amount, price, mass, energyValue) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue);
 
+        public override string ToString()
+        {
+            return $"{amount} of {name} products, {price}$. Mass: {mass}. Energy value: {energyValue} kcal";
+        }
+
+
     }
 
     abstract class Confectionery: Product
@@ -66,6 +97,10 @@ namespace Lab5
         protected Confectionery() { }
         public Confectionery(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue, int arg_sugarValue) => (name, amount, price, mass, energyValue, sugarValue) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue, sugarValue);
 
+        public override string ToString()
+        {
+            return $"{amount} of {name} confectionery products, {price}$ each. Mass: {mass}. Energy value: {energyValue} kcal. Sugar value: {sugarValue} g.";
+        }
     }
     
     sealed class Cake: Confectionery
@@ -74,18 +109,33 @@ namespace Lab5
        public int height { get; private set; }
 
        public Cake(string arg_name, int arg_amount, int arg_price, int arg_diameter, int arg_height) => (name, amount, price, diameter, height) = (arg_name, arg_amount, arg_price, arg_diameter, arg_height);
+
+        public override string ToString()
+        {
+            return $"{amount} of {name} cakes, {price}$ each. Mass: {mass}. Energy value: {energyValue} kcal. Sugar value: {sugarValue} g.";
+        }
     }
 
     sealed class Sweets: Confectionery
     {
         public int amountPerKg { get; private set; }
         public Sweets(string arg_name, int arg_amount, int arg_price, int arg_amountPerKg) => (name, amount, price, amountPerKg) = (arg_name, arg_amount, arg_price, arg_amountPerKg);
+
+        public override string ToString()
+        {
+            return $"{amount} of {name} sweets, {price}$ per kg. Mass: {mass}. Energy value: {energyValue} kcal. Sugar value: {sugarValue} g. Average amount/kg: {amountPerKg}";
+        }
     }
 
     sealed class Flower: Goods
     {
         public string color { get; private set; }
         public Flower (string arg_name, int arg_amount, int arg_price, string arg_color) => (name, amount, price, color ) = (arg_name, arg_amount, arg_price, arg_color);
+
+        public override string ToString()
+        {
+            return $"{amount} of {color} {name} flowers, {price}$ each.";
+        }
     }
 
     sealed class Watch : Goods
@@ -94,6 +144,11 @@ namespace Lab5
         public string type { get; private set; } // electronic, mechanical
 
         public Watch(string arg_name, int arg_amount, int arg_price, string arg_brand, string arg_type) => (name, amount, price, brand, type) = (arg_name, arg_amount, arg_price, arg_brand, arg_type);
+
+        public override string ToString()
+        {
+            return $"{amount} of {type} {brand} {name}, {price}$ each.";
+        }
     }
 
 
