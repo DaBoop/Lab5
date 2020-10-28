@@ -28,7 +28,7 @@ namespace Lab5
 
             Console.WriteLine();
            
-            Goods goods = cake as Product;
+            Goods goods = cake as Goods;
             goods.Method1();
             goods.Method2();
 

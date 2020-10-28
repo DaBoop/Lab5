@@ -44,7 +44,7 @@ namespace Lab5
             }
         }
 
-        public void Method1() => Console.WriteLine("I am an interface method");
+        public void Method1() => Console.WriteLine("I'm an interface method");
         public virtual void Method2() => Console.WriteLine("I'm a virtual method");
 
         override public bool Equals(object o)
@@ -88,8 +88,8 @@ namespace Lab5
         public Product(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue) => (name, amount, price, mass, energyValue) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue);
 
 
-        new public void Method1() => Console.WriteLine("I'm an overriden method");
-        override public void Method2() => Console.WriteLine("I'm a virtual method");
+        new public void Method1() => Console.WriteLine("I'm a new interface method");
+        override public void Method2() => Console.WriteLine("I'm an overriden virtual method");
 
         public override string ToString()
         {
@@ -116,6 +116,8 @@ namespace Lab5
     {
        public int area { get; private set; }
        public int height { get; private set; }
+
+
 
        public Cake(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue, int arg_sugarValue, int arg_area, int arg_height) => (name, amount, price, mass, energyValue, sugarValue, area, height) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue, arg_sugarValue, arg_area, arg_height);
 
