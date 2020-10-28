@@ -1,0 +1,36 @@
+[
+  {
+    "amount": 12,
+    "brand": "Rolex",
+    "type": 1,
+    "mass": 200,
+    "name": "Datejust",
+    "price": 5495
+  },
+  {
+    "amount": 15,
+    "area": 100,
+    "height": 5,
+    "sugarValue": 20,
+    "energyValue": 1000,
+    "mass": 1000,
+    "name": "Tiramisu",
+    "price": 5
+  },
+  {
+    "amount": 150,
+    "amountPerKg": 50,
+    "sugarValue": 10,
+    "energyValue": 500,
+    "mass": 1500,
+    "name": "Toffee",
+    "price": 3
+  },
+  {
+    "amount": 1,
+    "color": "purple",
+    "mass": 5,
+    "name": "Tulip",
+    "price": 30
+  }
+]

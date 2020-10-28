@@ -4,6 +4,7 @@ using System.Text;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using Newtonsoft.Json;
 
 namespace Lab5
 {
@@ -54,17 +55,28 @@ namespace Lab5
             gift = (Gift)formatter.Deserialize(stream);
         }
 
-       /* public static void ToFile(Gift gift, string fileName) => File.WriteAllText(fileName, gift.ToString());
-        public static void FromFile(out Gift gift, string fileName)
+        public static void ToJson(Gift gift, string fileName)
         {
-             gift = new Gift();
-
-            foreach (var line in File.ReadAllLines(fileName)) 
-            {
-                gift.Add(Gift.ParseUnit(line));
-            }
-
+            string json = JsonConvert.SerializeObject(gift, Formatting.Indented);
+            File.WriteAllText(fileName, json);
         }
-       */
+
+        public static void FromJson(out Gift gift, string fileName)
+        {
+            
+            gift = JsonConvert.DeserializeObject<Gift>(File.ReadAllText(fileName), new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto });
+        }
+        /* public static void ToFile(Gift gift, string fileName) => File.WriteAllText(fileName, gift.ToString());
+         public static void FromFile(out Gift gift, string fileName)
+         {
+              gift = new Gift();
+
+             foreach (var line in File.ReadAllLines(fileName)) 
+             {
+                 gift.Add(Gift.ParseUnit(line));
+             }
+
+         }
+        */
     }
 }

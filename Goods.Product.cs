@@ -7,9 +7,9 @@ namespace Lab5
     [Serializable]
     abstract class Product : Goods
     {
-        public int energyValue { get; protected set; }
+        public int energyValue { get;  set; }
 
-        //public int mass { get; protected set; } // и ещё разок почему.... .... 
+        //public int mass { get;  set; } // и ещё разок почему.... .... 
 
         protected Product() { }
         public Product(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue) => (name, amount, price, mass, energyValue) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue);
@@ -28,7 +28,7 @@ namespace Lab5
     [Serializable]
     abstract class Confectionery : Product
     {
-        public int sugarValue { get; protected set; }
+        public int sugarValue { get;  set; }
 
         protected Confectionery() { }
         public Confectionery(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue, int arg_sugarValue) => (name, amount, price, mass, energyValue, sugarValue) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue, sugarValue);
@@ -41,8 +41,8 @@ namespace Lab5
     [Serializable]
     sealed class Cake : Confectionery
     {
-        public int area { get; private set; }
-        public int height { get; private set; }
+        public int area { get;  set; }
+        public int height { get;  set; }
         public Cake(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue, int arg_sugarValue, int arg_area, int arg_height) => (name, amount, price, mass, energyValue, sugarValue, area, height) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue, arg_sugarValue, arg_area, arg_height);
 
         public override string ToString()
@@ -53,7 +53,7 @@ namespace Lab5
     [Serializable]
     sealed class Sweets : Confectionery
     {
-        public int amountPerKg { get; private set; }
+        public int amountPerKg { get;  set; }
         public Sweets(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue, int arg_sugarValue, int arg_amountPerKg) => (name, amount, price, mass, energyValue, sugarValue, amountPerKg) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue, arg_sugarValue, arg_amountPerKg);
 
         public override string ToString()

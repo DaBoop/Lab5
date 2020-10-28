@@ -83,8 +83,10 @@ namespace Lab5
             var gift2 = new Gift();
             GiftController.ToFile(gift, "e:\\ООП\\Лабы\\Lab5\\Gift.txt");
             GiftController.FromFile(out gift2, "e:\\ООП\\Лабы\\Lab5\\Gift.txt");
-
             Console.WriteLine(gift2);
+
+            GiftController.ToJson(gift, "e:\\ООП\\Лабы\\Lab5\\Gift.json");
+            //GiftController.FromJson(out gift2, "e:\\ООП\\Лабы\\Lab5\\Gift.json");
         }
     }
 }

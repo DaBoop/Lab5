@@ -16,11 +16,11 @@ namespace Lab5
     [Serializable]
     abstract class Goods: IGoods, IComparable
     {
-        public int mass { get; protected set; } // почему не сказали сразу, а ток в 6 лабе               .............................
+        public int mass { get;  set; } // почему не сказали сразу, а ток в 6 лабе               .............................
         public int amount;
 
-        public string name { get; protected set; }
-        public int price { get; protected set; }
+        public string name { get;  set; }
+        public int price { get;  set; }
 
         protected Goods() { } // зачем.
 

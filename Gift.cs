@@ -22,6 +22,7 @@ namespace Lab5
             }
         }
 
+        public Gift() { }
         public void Sort()
         {
             list.Sort();
