@@ -4,7 +4,22 @@ using System.Text;
 
     namespace System
     {
-        internal class GoodsException : Exception
+        [Serializable]
+        internal class GiftAction : Exception
+        {
+            public GiftAction()
+            {
+            }
+
+            public GiftAction(string message) : base(message)
+            {
+            }
+
+            public GiftAction(string message, Exception innerException) : base(message, innerException)
+            {
+            }
+        }
+    internal class GoodsException : Exception
         {
             public GoodsException()
             {

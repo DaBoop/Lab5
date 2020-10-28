@@ -1,0 +1,9 @@
+29.10.2020 02:24  INFO: System.Exception	Added Tiramisu		
+29.10.2020 02:24  INFO: System.Exception	Added Tulip		
+29.10.2020 02:24  INFO: System.Exception	Added Datejust		
+29.10.2020 02:24  INFO: System.Exception	Added Toffee		
+29.10.2020 02:24  INFO: System.Exception	Sorted		
+29.10.2020 02:24  INFO: System.NegativeAmountException	amount is less than n		Void Remove(Int32)
+29.10.2020 02:24  INFO: System.ArgumentException	Not enough money (Parameter 'money')		Int32 Sell(Int32)
+29.10.2020 02:24  INFO: System.ArgumentException	n must be positive (Parameter 'n')		Void Add(Int32)
+29.10.2020 02:24  INFO: System.EmptyListException	List can not be printed because it's empty		Void print()

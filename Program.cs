@@ -92,8 +92,7 @@ namespace Lab5
             Console.WriteLine("\n========================\n");
             // И тут внезапно 7 лаба
 
-            // flower amount = 1;
-
+            // flower amount = 1; 
             try
             {
                 flower.Remove(2);
@@ -101,6 +100,7 @@ namespace Lab5
             catch(NegativeAmountException ex)
             {
                 Console.WriteLine(ex);
+                gift.logger.Add(ex);
             }
 
             try
@@ -110,6 +110,7 @@ namespace Lab5
             catch (ArgumentException ex)
             {
                 Console.WriteLine(ex);
+                gift.logger.Add(ex);
             }
 
             try
@@ -119,6 +120,7 @@ namespace Lab5
             catch(ArgumentException ex )
             {
                 Console.WriteLine(ex);
+                gift.logger.Add(ex);
             }
 
             try
@@ -130,6 +132,7 @@ namespace Lab5
             catch (EmptyListException ex)
             {
                 Console.WriteLine(ex);
+                gift.logger.Add(ex);
             }
             finally
             {
@@ -143,7 +146,12 @@ namespace Lab5
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
+                gift.logger.Add(ex);
             }
+
+            Console.WriteLine("\n=========\nLog\n=========\n");
+            Console.WriteLine(gift.logger);
+            gift.logger.ToFile("e:\\ООП\\Лабы\\Lab5\\log.txt");
 
         }
     }
