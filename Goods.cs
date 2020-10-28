@@ -13,7 +13,7 @@ namespace Lab5
         void Method1();
 
     }
-    abstract class Goods: IGoods
+    abstract class Goods: IGoods, IComparable
     {
         public int mass { get; protected set; } // почему не сказали сразу, а ток в 6 лабе               .............................
         public int amount;
@@ -75,6 +75,11 @@ namespace Lab5
             return $"{amount} of {name} goods, {price}$ each";
         }
 
+        public int CompareTo(object obj)
+        {
+            Goods goods = obj as Goods;
+            return name.CompareTo(goods.name);
+        }
     }
 
     sealed class Flower: Goods

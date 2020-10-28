@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Lab5
 {
-    class Gift
+    class Gift : IEnumerable<Goods>
     {
         List<Goods> list = new List<Goods>();
-
+        public int Count { get => list.Count; }
         public Goods this[int index]
         {
             get => list[index];
@@ -20,6 +21,10 @@ namespace Lab5
             }
         }
 
+        public void Sort()
+        {
+            list.Sort();
+        }
         public void Add(Goods obj) // Это не много, но это честная работа...
         {
             list.Add(obj);
@@ -68,13 +73,22 @@ namespace Lab5
         public override string ToString()
         {
             string s = "";
-            foreach (var obj in list)
+            foreach (Goods obj in list)
             {
-                s += obj.name;
+                s += obj.name + " ";
             }
             return s;
         }
 
+        public IEnumerator<Goods> GetEnumerator()
+        {
+            return ((IEnumerable<Goods>)list).GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return ((IEnumerable)list).GetEnumerator();
+        }
     }
 
    

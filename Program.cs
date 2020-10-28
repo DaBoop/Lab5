@@ -7,7 +7,7 @@ namespace Lab5
         static void Main(string[] args)
         {
             var cake = new Cake("Tiramisu", 5, 5, 1000, 1000, 20, 100, 5);
-            var sweets = new Sweets("Toffee", 3, 30, 1500, 500, 10, 50);
+            var sweets = new Sweets("Toffee", 150, 3, 1500, 500, 10, 50);
             var flower = new Flower("Tulip", 1, 30, "purple", 5);
             var watch = new Watch("Datejust", 12, 5495, "Rolex", 1, 200); 
 
@@ -63,6 +63,22 @@ namespace Lab5
             {
                 Printer.IAmPrinting(o as Goods);
             }
+
+            Console.WriteLine("\n========================\n");
+            // И тут внезапно 6 лаба
+
+            Gift gift = new Gift();
+            gift.Add(cake);
+            gift.Add(flower);
+            gift.Add(watch);
+            gift.Add(sweets);
+
+            Console.WriteLine(gift);
+
+            Console.WriteLine(GiftController.GetMinMass(gift));
+            Console.WriteLine(GiftController.GetSumPrice(gift));
+            GiftController.SortName(gift);
+            Console.WriteLine(gift);
         }
     }
 }
