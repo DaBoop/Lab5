@@ -8,8 +8,8 @@ namespace Lab5
         {
             var cake = new Cake("Tiramisu", 5, 5, 1000, 1000, 20, 100, 5);
             var sweets = new Sweets("Toffee", 3, 30, 1500, 500, 10, 50);
-            var flower = new Flower("Tulip", 1, 30, "purple");
-            var watch = new Watch("Datejust", 12, 5495, "Rolex", 1); 
+            var flower = new Flower("Tulip", 1, 30, "purple", 5);
+            var watch = new Watch("Datejust", 12, 5495, "Rolex", 1, 200); 
 
             Console.WriteLine(cake);
             cake.Add(10);

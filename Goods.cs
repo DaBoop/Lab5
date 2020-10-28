@@ -23,7 +23,7 @@ namespace Lab5
 
         protected Goods() { } // зачем.
 
-        public Goods(string arg_name, int arg_amount, int arg_price, int mass) => (name, amount, price, mass) = (arg_name, arg_amount, arg_price, arg_mass);
+        public Goods(string arg_name, int arg_amount, int arg_price, int arg_mass) => (name, amount, price, mass) = (arg_name, arg_amount, arg_price, arg_mass);
 
 
         
