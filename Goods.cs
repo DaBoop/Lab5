@@ -10,6 +10,7 @@ namespace Lab5
         void Remove(int n);
         void Sell();
         int Sell(int money);
+        void Method1();
 
     }
     abstract class Goods: IGoods
@@ -19,6 +20,7 @@ namespace Lab5
         public int price { get; protected set; }
 
         protected Goods() { } // зачем.
+
         public Goods(string arg_name, int arg_amount, int arg_price) => (name, amount, price) = (arg_name, arg_amount, arg_price);
 
 
@@ -41,6 +43,9 @@ namespace Lab5
                 return money - price;
             }
         }
+
+        public void Method1() => Console.WriteLine("I am an interface method");
+        public virtual void Method2() => Console.WriteLine("I'm a virtual method");
 
         override public bool Equals(object o)
         {
@@ -82,6 +87,10 @@ namespace Lab5
         protected Product() { }
         public Product(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue) => (name, amount, price, mass, energyValue) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue);
 
+
+        new public void Method1() => Console.WriteLine("I'm an overriden method");
+        override public void Method2() => Console.WriteLine("I'm a virtual method");
+
         public override string ToString()
         {
             return $"{amount} of {name} products, {price}$. Mass: {mass}. Energy value: {energyValue} kcal";
@@ -105,10 +114,10 @@ namespace Lab5
     
     sealed class Cake: Confectionery
     {
-       public int diameter { get; private set; }
+       public int area { get; private set; }
        public int height { get; private set; }
 
-       public Cake(string arg_name, int arg_amount, int arg_price, int arg_diameter, int arg_height) => (name, amount, price, diameter, height) = (arg_name, arg_amount, arg_price, arg_diameter, arg_height);
+       public Cake(string arg_name, int arg_amount, int arg_price, int arg_area, int arg_height) => (name, amount, price, area, height) = (arg_name, arg_amount, arg_price, arg_area, arg_height);
 
         public override string ToString()
         {
