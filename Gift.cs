@@ -4,7 +4,8 @@ using System.Collections.Generic;
 using System.Text;
 
 namespace Lab5
-{
+{   
+    [Serializable]
     class Gift : IEnumerable<Goods>
     {
         List<Goods> list = new List<Goods>();

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Lab5
 {
-
+    [Serializable]
     abstract class Product : Goods
     {
         public int energyValue { get; protected set; }
@@ -25,7 +25,7 @@ namespace Lab5
 
 
     }
-
+    [Serializable]
     abstract class Confectionery : Product
     {
         public int sugarValue { get; protected set; }
@@ -38,7 +38,7 @@ namespace Lab5
             return $"{amount} of {name} confectionery products, {price}$ each. Mass: {mass}. Energy value: {energyValue} kcal. Sugar value: {sugarValue} g.";
         }
     }
-
+    [Serializable]
     sealed class Cake : Confectionery
     {
         public int area { get; private set; }
@@ -50,7 +50,7 @@ namespace Lab5
             return $"{amount} of {name} cakes, {price}$ each. Mass: {mass}. Energy value: {energyValue} kcal. Sugar value: {sugarValue} g.";
         }
     }
-
+    [Serializable]
     sealed class Sweets : Confectionery
     {
         public int amountPerKg { get; private set; }

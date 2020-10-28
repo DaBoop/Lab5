@@ -13,6 +13,7 @@ namespace Lab5
         void Method1();
 
     }
+    [Serializable]
     abstract class Goods: IGoods, IComparable
     {
         public int mass { get; protected set; } // почему не сказали сразу, а ток в 6 лабе               .............................
@@ -81,7 +82,7 @@ namespace Lab5
             return name.CompareTo(goods.name);
         }
     }
-
+    [Serializable]
     sealed class Flower: Goods
     {
         public string color { get; private set; }
@@ -92,7 +93,7 @@ namespace Lab5
             return $"{amount} of {color} {name} flowers, {price}$ each.";
         }
     }
-
+    [Serializable]
     sealed partial class Watch : Goods
     {
 

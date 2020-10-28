@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Lab5
 {
@@ -35,23 +38,33 @@ namespace Lab5
         {
             gift.Sort();
         }
-        /*public static void SortName(Gift gift)
-       
-        {
-            Goods temp;
-            for (int i = 0; i < gift.Count-2; i++)
-            {
-                for (int j = 0; j < gift.Count-2-i; j++)
-                { 
-                    if (String.Compare(gift[i].name, gift[i + 1].name, false) == 1)
-                    {
-                        temp = gift[i];
-                        gift[i] = gift[i + 1];
-                        gift[i + 1] = temp;
-                    }
-                }
-            }
-        }*/
 
+        public static void ToFile (Gift gift, string fileName)
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(fileName, FileMode.Create, FileAccess.Write);
+            formatter.Serialize(stream, gift);
+            stream.Close();
+        }
+
+        public static void FromFile(out Gift gift, string fileName)
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            gift = (Gift)formatter.Deserialize(stream);
+        }
+
+       /* public static void ToFile(Gift gift, string fileName) => File.WriteAllText(fileName, gift.ToString());
+        public static void FromFile(out Gift gift, string fileName)
+        {
+             gift = new Gift();
+
+            foreach (var line in File.ReadAllLines(fileName)) 
+            {
+                gift.Add(Gift.ParseUnit(line));
+            }
+
+        }
+       */
     }
 }

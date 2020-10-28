@@ -79,6 +79,12 @@ namespace Lab5
             Console.WriteLine(GiftController.GetSumPrice(gift));
             GiftController.SortName(gift);
             Console.WriteLine(gift);
+
+            var gift2 = new Gift();
+            GiftController.ToFile(gift, "e:\\ООП\\Лабы\\Lab5\\Gift.txt");
+            GiftController.FromFile(out gift2, "e:\\ООП\\Лабы\\Lab5\\Gift.txt");
+
+            Console.WriteLine(gift2);
         }
     }
 }
