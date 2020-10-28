@@ -75,9 +75,6 @@ namespace Lab5
 
     }
 
-
-
-
     sealed class Flower: Goods
     {
         public string color { get; private set; }
@@ -89,7 +86,7 @@ namespace Lab5
         }
     }
 
-    sealed class Watch : Goods
+    sealed partial class Watch : Goods
     {
         public string brand { get; private set; }
         //public string type { get; private set; } // electronic, mechanical
@@ -101,12 +98,6 @@ namespace Lab5
         }
         public Type type { get; private set; }
 
-        public Watch(string arg_name, int arg_amount, int arg_price, string arg_brand, int arg_type) => (name, amount, price, brand, type) = (arg_name, arg_amount, arg_price, arg_brand, (Type)arg_type);
-
-        public override string ToString()
-        {
-            return $"{amount} of {type} {brand} {name}, {price}$ each.";
-        }
     }
 
 

@@ -6,9 +6,9 @@ namespace Lab5
     {
         static void Main(string[] args)
         {
-            var cake = new Cake("Tiramisu", 5, 100, 1000, 1000, 20, 100, 5);
-            var sweets = new Sweets("Toffee", 100, 30, 1500, 500, 10, 50);
-            var flower = new Flower("Tulip", 10, 30, "purple");
+            var cake = new Cake("Tiramisu", 5, 5, 1000, 1000, 20, 100, 5);
+            var sweets = new Sweets("Toffee", 3, 30, 1500, 500, 10, 50);
+            var flower = new Flower("Tulip", 1, 30, "purple");
             var watch = new Watch("Datejust", 12, 5495, "Rolex", 1); 
 
             Console.WriteLine(cake);
