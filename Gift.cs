@@ -64,6 +64,8 @@ namespace Lab5
 
         public void print()
         {
+            if (list.Count == 0)
+                throw new EmptyListException("List can not be printed because it's empty");
             string s = "";
             foreach(var obj in list)
             {

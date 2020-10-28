@@ -4,19 +4,48 @@ using System.Text;
 
     namespace System
     {
-        [Serializable]
-        internal class NegativeAmount : Exception
+        internal class GoodsException : Exception
         {
-            public NegativeAmount()
+            public GoodsException()
             {
             }
 
-            public NegativeAmount(string message) : base(message)
+            public GoodsException(string message) : base(message)
             {
             }
 
-            public NegativeAmount(string message, Exception innerException) : base(message, innerException)
+            public GoodsException(string message, Exception innerException) : base(message, innerException)
             {
             }
         }
-    }
+        internal class NegativeAmountException : GoodsException
+        {
+            public NegativeAmountException()
+            {
+            }
+
+            public NegativeAmountException(string message) : base(message)
+            {
+            }
+
+            public NegativeAmountException(string message, Exception innerException) : base(message, innerException)
+            {
+            }
+        }
+
+        internal class EmptyListException : Exception
+        {
+            public EmptyListException()
+            {
+            }
+
+            public EmptyListException(string message) : base(message)
+            {
+            }
+
+            public EmptyListException(string message, Exception innerException) : base(message, innerException)
+            {
+            }
+        }
+
+}  

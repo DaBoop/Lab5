@@ -98,9 +98,18 @@ namespace Lab5
             {
                 flower.Remove(2);
             }
-            catch(NegativeAmount)
+            catch(NegativeAmountException)
             {
                 Console.WriteLine("Not enough flowers");
+            }
+
+            try
+            {
+                flower.Sell(1);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex);
             }
 
             try
@@ -112,15 +121,25 @@ namespace Lab5
                 Console.WriteLine("Wrong argument");
             }
 
+            try
+            {
+                var emptygift = new Gift();
+                emptygift.print();
+            }
+            catch (EmptyListException)
+            {
+                Console.WriteLine("Gift is empty");
+            }
             try 
             {
                 int b = 0;
                 int a = 10 / b;
             } 
-            catch(DivideByZeroException)
+            catch(Exception)
             {
                 Console.WriteLine("Division by zero");
             }
+
         }
     }
 }

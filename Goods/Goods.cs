@@ -39,7 +39,7 @@ namespace Lab5
             if (n < 0)
                 throw new System.ArgumentException("n must be positive", "n");
             if (n > amount)
-                throw new System.NegativeAmount("amount is less than n");
+                throw new System.NegativeAmountException("amount is less than n");
             amount -= n;
         }
 
