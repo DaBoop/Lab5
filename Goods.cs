@@ -117,7 +117,7 @@ namespace Lab5
        public int area { get; private set; }
        public int height { get; private set; }
 
-       public Cake(string arg_name, int arg_amount, int arg_price, int arg_area, int arg_height) => (name, amount, price, area, height) = (arg_name, arg_amount, arg_price, arg_area, arg_height);
+       public Cake(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue, int arg_sugarValue, int arg_area, int arg_height) => (name, amount, price, mass, energyValue, sugarValue, area, height) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue, arg_sugarValue, arg_area, arg_height);
 
         public override string ToString()
         {
@@ -128,7 +128,7 @@ namespace Lab5
     sealed class Sweets: Confectionery
     {
         public int amountPerKg { get; private set; }
-        public Sweets(string arg_name, int arg_amount, int arg_price, int arg_amountPerKg) => (name, amount, price, amountPerKg) = (arg_name, arg_amount, arg_price, arg_amountPerKg);
+        public Sweets(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue, int arg_sugarValue,  int arg_amountPerKg) => (name, amount, price, mass, energyValue, sugarValue, amountPerKg) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue, arg_sugarValue, arg_amountPerKg);
 
         public override string ToString()
         {
