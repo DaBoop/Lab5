@@ -88,9 +88,39 @@ namespace Lab5
             GiftController.ToJson(gift, "e:\\ООП\\Лабы\\Lab5\\Gift.json");
             //GiftController.FromJson(out gift2, "e:\\ООП\\Лабы\\Lab5\\Gift.json");
 
+
+            Console.WriteLine("\n========================\n");
             // И тут внезапно 7 лаба
 
+            // flower amount = 1;
 
+            try
+            {
+                flower.Remove(2);
+            }
+            catch(NegativeAmount)
+            {
+                Console.WriteLine("Not enough flowers");
+            }
+
+            try
+            {
+                flower.Add(-2);
+            }
+            catch(ArgumentException)
+            {
+                Console.WriteLine("Wrong argument");
+            }
+
+            try 
+            {
+                int b = 0;
+                int a = 10 / b;
+            } 
+            catch(DivideByZeroException)
+            {
+                Console.WriteLine("Division by zero");
+            }
         }
     }
 }

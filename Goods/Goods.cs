@@ -27,9 +27,21 @@ namespace Lab5
         public Goods(string arg_name, int arg_amount, int arg_price, int arg_mass) => (name, amount, price, mass) = (arg_name, arg_amount, arg_price, arg_mass);
 
 
-        
-        public void Add(int n) => amount += n;
-        public void Remove(int n) => amount -= n;
+
+        public void Add(int n)
+        {
+            if (n < 0)
+                throw new System.ArgumentException("n must be positive", "n");
+            amount += n;
+        }
+        public void Remove(int n)
+        {
+            if (n < 0)
+                throw new System.ArgumentException("n must be positive", "n");
+            if (n > amount)
+                throw new System.NegativeAmount("amount is less than n");
+            amount -= n;
+        }
 
         public void Sell() => amount--;
 
