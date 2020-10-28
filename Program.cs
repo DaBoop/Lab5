@@ -87,6 +87,10 @@ namespace Lab5
 
             GiftController.ToJson(gift, "e:\\ООП\\Лабы\\Lab5\\Gift.json");
             //GiftController.FromJson(out gift2, "e:\\ООП\\Лабы\\Lab5\\Gift.json");
+
+            // И тут внезапно 7 лаба
+
+
         }
     }
 }
