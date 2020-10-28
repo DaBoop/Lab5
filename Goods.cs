@@ -152,9 +152,16 @@ namespace Lab5
     sealed class Watch : Goods
     {
         public string brand { get; private set; }
-        public string type { get; private set; } // electronic, mechanical
+        //public string type { get; private set; } // electronic, mechanical
+        public enum Type
+        {
+            electronic = 0,
+            mechanical = 1,
+            sand = 2
+        }
+        public Type type { get; private set; }
 
-        public Watch(string arg_name, int arg_amount, int arg_price, string arg_brand, string arg_type) => (name, amount, price, brand, type) = (arg_name, arg_amount, arg_price, arg_brand, arg_type);
+        public Watch(string arg_name, int arg_amount, int arg_price, string arg_brand, int arg_type) => (name, amount, price, brand, type) = (arg_name, arg_amount, arg_price, arg_brand, (Type)arg_type);
 
         public override string ToString()
         {

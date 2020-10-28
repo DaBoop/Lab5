@@ -9,11 +9,12 @@ namespace Lab5
             var cake = new Cake("Tiramisu", 5, 100, 1000, 1000, 20, 100, 5);
             var sweets = new Sweets("Toffee", 100, 30, 1500, 500, 10, 50);
             var flower = new Flower("Tulip", 10, 30, "purple");
-            var watch = new Watch("Datejust", 12, 5495, "Rolex", "mechanical");
+            var watch = new Watch("Datejust", 12, 5495, "Rolex", 1); 
 
             Console.WriteLine(cake);
             cake.Add(10);
             Console.WriteLine(cake);
+            Console.WriteLine(watch); 
             Console.WriteLine();
 
             watch.Method1(); // Goods
