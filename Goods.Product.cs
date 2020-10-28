@@ -9,7 +9,7 @@ namespace Lab5
     {
         public int energyValue { get; protected set; }
 
-        public int mass { get; protected set; }
+        //public int mass { get; protected set; } // и ещё разок почему.... .... 
 
         protected Product() { }
         public Product(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue) => (name, amount, price, mass, energyValue) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue);
@@ -43,9 +43,6 @@ namespace Lab5
     {
         public int area { get; private set; }
         public int height { get; private set; }
-
-
-
         public Cake(string arg_name, int arg_amount, int arg_price, int arg_mass, int arg_energyValue, int arg_sugarValue, int arg_area, int arg_height) => (name, amount, price, mass, energyValue, sugarValue, area, height) = (arg_name, arg_amount, arg_price, arg_mass, arg_energyValue, arg_sugarValue, arg_area, arg_height);
 
         public override string ToString()

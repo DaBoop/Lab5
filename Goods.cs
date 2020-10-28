@@ -15,13 +15,15 @@ namespace Lab5
     }
     abstract class Goods: IGoods
     {
+        public int mass { get; protected set; } // почему не сказали сразу, а ток в 6 лабе               .............................
         public int amount;
+
         public string name { get; protected set; }
         public int price { get; protected set; }
 
         protected Goods() { } // зачем.
 
-        public Goods(string arg_name, int arg_amount, int arg_price) => (name, amount, price) = (arg_name, arg_amount, arg_price);
+        public Goods(string arg_name, int arg_amount, int arg_price, int mass) => (name, amount, price, mass) = (arg_name, arg_amount, arg_price, arg_mass);
 
 
         
@@ -78,7 +80,7 @@ namespace Lab5
     sealed class Flower: Goods
     {
         public string color { get; private set; }
-        public Flower (string arg_name, int arg_amount, int arg_price, string arg_color) => (name, amount, price, color ) = (arg_name, arg_amount, arg_price, arg_color);
+        public Flower (string arg_name, int arg_amount, int arg_price, string arg_color, int arg_mass) => (name, amount, price, color, mass ) = (arg_name, arg_amount, arg_price, arg_color, arg_mass);
 
         public override string ToString()
         {
@@ -88,6 +90,7 @@ namespace Lab5
 
     sealed partial class Watch : Goods
     {
+
         public string brand { get; private set; }
         //public string type { get; private set; } // electronic, mechanical
         public enum Type
