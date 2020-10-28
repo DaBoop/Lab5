@@ -19,25 +19,49 @@ namespace Lab5
             watch.Method1(); // Goods
             watch.Method2();
 
+            Console.WriteLine();
+
             cake.Method1(); // Product
             cake.Method2();
 
-            object obj = (object)flower;
+
+
+            Console.WriteLine();
+           
+            Goods goods = cake as Product;
+            goods.Method1();
+            goods.Method2();
 
             Console.WriteLine();
 
-            Console.WriteLine("flower is " +  (obj is Flower ? "Flower" : "not Flower"));
-            Console.WriteLine("flower is " +  (obj is Goods ? "Goods" : "not Goods"));
+            IGoods igoods = cake as IGoods;
+            igoods.Method1();
+            // виртуальгный метод низя
+
+            Console.WriteLine();
+
+            object obj = (object)flower;
+
+            Console.WriteLine("flower is " + (obj is Flower ? "Flower" : "not Flower"));
+            Console.WriteLine("flower is " + (obj is Goods ? "Goods" : "not Goods"));
             Console.WriteLine("flower is " + (obj is Product ? "Product" : "not Product"));
             Console.WriteLine("flower is " + (obj is IGoods ? "IGoods" : "not IGoods"));
 
             Console.WriteLine();
+
 
             Console.WriteLine("flower is " + ((obj as Flower) != null ? "Flower" : "not Flower"));
             Console.WriteLine("flower is " + ((obj as Goods) != null ? "Goods" : "not Goods"));
             Console.WriteLine("flower is " + ((obj as Product) != null ? "Product" : "not Product"));
             Console.WriteLine("flower is " + (obj is IGoods ? "IGoods" : "not IGoods"));
 
+            Console.WriteLine();
+
+            object[] arr = { cake, sweets, flower, watch};
+            foreach (object o in arr)
+            {
+                Printer.IAmPrinting(o as Goods);
+            }
         }
     }
 }
