@@ -1,0 +1,28 @@
+{
+  "owner": {
+    "Id": "65741796",
+    "Name": "Artyom Orlov",
+    "Organization": "BSTU"
+  },
+  "date": {
+    "Day": 29,
+    "Month": 10,
+    "Year": 2020
+  },
+  "Head": {
+    "Item": 1,
+    "Next": {
+      "Item": 1,
+      "Next": {
+        "Item": 1,
+        "Next": {
+          "Item": 1,
+          "Next": {
+            "Item": 1,
+            "Next": null
+          }
+        }
+      }
+    }
+  }
+}

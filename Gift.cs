@@ -106,6 +106,8 @@ namespace Lab5
         {
             return ((IEnumerable)list).GetEnumerator();
         }
+
+        
     }
 
    

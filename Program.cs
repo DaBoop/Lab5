@@ -162,6 +162,56 @@ namespace Lab5
        
             gift.logger.ToFile(folder + "\\log.txt");
 
+            // И тут внезапно 8 лаба
+            Console.WriteLine();
+            Console.WriteLine();
+
+            var intList = new CList<int>();
+            intList.Add(1);
+            intList.Add(2);
+            intList.Add(3);
+            intList.Print();
+            Console.WriteLine();
+
+            var doubleList = new CList<double>();
+            doubleList.Add(1.1);
+            doubleList.Add(2);
+            doubleList.Add(3.3);
+            doubleList.Print();
+            Console.WriteLine();
+
+            var goodsList = new CList<Goods>();
+            goodsList.Add(flower);
+            goodsList.Add(watch);
+            goodsList.Add(sweets);
+            goodsList.Add(cake);
+            goodsList.Print();
+            Console.WriteLine();
+
+            try // Самый неочевидный способ очистки листа invented
+            {
+                for (var i = 0; i < 100; i++)
+                     intList--;
+                //intList--;
+                //intList--;
+                //intList--;
+            } catch (NegativeAmountException ex)
+            {
+                Console.WriteLine("List empty");
+            }
+            finally
+            {
+                intList.Add(1);
+                intList.Add(1);
+                intList.Add(1);
+                intList.Add(1);
+                intList.Add(1);
+                intList.Print();
+
+            }
+            intList.ToFile(folder + "\\intlist.txt");
+            intList.ToJson(folder + "\\intlist.json");
         }
+        
     }
 }

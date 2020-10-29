@@ -6,7 +6,7 @@ using System.Text;
     namespace System
     {
         [Serializable]
-        internal class GiftAction : Exception
+        internal class GiftAction : ApplicationException
         {
 
         public GiftAction(SerializationInfo info, StreamingContext context) : base(info, context)

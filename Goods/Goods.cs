@@ -14,7 +14,7 @@ namespace Lab5
 
     }
     [Serializable]
-    abstract class Goods: IGoods, IComparable
+    abstract public class Goods: IGoods, IComparable
     {
         public int mass { get;  set; } // почему не сказали сразу, а ток в 6 лабе               .............................
         public int amount;
