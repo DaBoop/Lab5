@@ -81,11 +81,19 @@ namespace Lab5
             Console.WriteLine(gift);
 
             var gift2 = new Gift();
-            GiftController.ToFile(gift, "e:\\ООП\\Лабы\\Lab5\\Gift.txt");
-            GiftController.FromFile(out gift2, "e:\\ООП\\Лабы\\Lab5\\Gift.txt");
+
+            string folder = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
+            System.IO.DirectoryInfo directoryInfo = System.IO.Directory.GetParent(folder);
+            directoryInfo = System.IO.Directory.GetParent(directoryInfo.FullName);
+            directoryInfo = System.IO.Directory.GetParent(directoryInfo.FullName);
+            folder = directoryInfo.FullName;
+            Console.WriteLine(folder);
+
+            GiftController.ToFile(gift, folder + "\\Gift.txt");
+            GiftController.FromFile(out gift2, folder + "\\Gift.txt");
             Console.WriteLine(gift2);
 
-            GiftController.ToJson(gift, "e:\\ООП\\Лабы\\Lab5\\Gift.json");
+            GiftController.ToJson(gift, folder + "\\Gift.json");
             //GiftController.FromJson(out gift2, "e:\\ООП\\Лабы\\Lab5\\Gift.json");
 
 
@@ -151,7 +159,8 @@ namespace Lab5
 
             Console.WriteLine("\n=========\nLog\n=========\n");
             Console.WriteLine(gift.logger);
-            gift.logger.ToFile("e:\\ООП\\Лабы\\Lab5\\log.txt");
+       
+            gift.logger.ToFile(folder + "\\log.txt");
 
         }
     }
