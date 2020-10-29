@@ -26,20 +26,20 @@ namespace Lab5
         public Gift() { }
         public void Sort()
         {
-            Exception ex = new Exception($"Sorted"); // GiftAction
+            GiftAction ex = new GiftAction($"Sorted"); // GiftAction
             logger.Add(ex);
             list.Sort();
         }
         public void Add(Goods obj) // Это не много, но это честная работа...
         {
-            Exception ex = new Exception($"Added {obj.name}"); // GiftAction
+            GiftAction ex = new GiftAction($"Added {obj.name}"); // GiftAction
             logger.Add(ex);
             list.Add(obj);
         }
 
         public void Add(Goods obj, int position)
         {
-            Exception ex = new Exception("Add");
+            GiftAction ex = new GiftAction("Add");
             logger.Add(ex);
             // Работает? Должно...
 
@@ -57,20 +57,20 @@ namespace Lab5
         }
         public void Remove(Goods obj)
         {
-            Exception ex = new Exception($"Removed {obj.name}"); // GiftAction
+            GiftAction ex = new GiftAction($"Removed {obj.name}"); // GiftAction
             logger.Add(ex);
             list.Remove(obj);
         }
         public void Remove()
         {
-            Exception ex = new Exception($"Removed {list[list.Count-1].name}"); // GiftAction
+            GiftAction ex = new GiftAction($"Removed {list[list.Count-1].name}"); // GiftAction
             logger.Add(ex);
             list.RemoveAt(list.Count - 1);
         }
 
         public void Remove(int position)
         {
-            Exception ex = new Exception($"Removed {list[position].name}"); // GiftAction
+            GiftAction ex = new GiftAction($"Removed {list[position].name}"); // GiftAction
             logger.Add(ex);
             list.RemoveAt(position);
         }

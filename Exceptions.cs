@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using System.Text;
 
     namespace System
@@ -7,7 +8,11 @@ using System.Text;
         [Serializable]
         internal class GiftAction : Exception
         {
-            public GiftAction()
+
+        public GiftAction(SerializationInfo info, StreamingContext context) : base(info, context)
+        {
+        }
+        public GiftAction()
             {
             }
 
