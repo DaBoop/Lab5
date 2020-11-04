@@ -66,9 +66,14 @@ namespace Lab5
             else
                 return false;
         }
+
+        public override string ToString()
+        {
+            return Item.ToString();
+        }
     }
     [Serializable]
-    public class CList<T> 
+    public class CList<T> where T: IComparable
     {
         private int itemCount;
         private Node<T> head;
@@ -244,6 +249,31 @@ namespace Lab5
             list = JsonConvert.DeserializeObject<CList<T>>(File.ReadAllText(fileName), new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto });
         }
 
+        public void toXML(string fileName)
+        {
+            XmlSerializer ser = new XmlSerializer(typeof(XmlElement));
+            XmlElement Document = new XmlDocument().CreateElement("CList");
+            Node<T> current = Head;
+            //var NodeList = new List<XmlElement>();
+            String s;
+            for (int j = 0; j < itemCount; j++)
+            {
+                //NodeList.Add(new XmlDocument().CreateElement(current.ToString(), "ns"));
+
+                s = $"Node{j}";
+                Console.WriteLine(s);
+                XmlElement temp = new XmlDocument().CreateElement(s);
+                temp.InnerText = current.ToString();
+                XmlNode TValue = Document.OwnerDocument.ImportNode(temp,true);
+                //XmlElement curNode = XmlDocument().CreateElement(current.Node)
+                Document.AppendChild(TValue);
+                current = current.Next;
+            }
+            
+            TextWriter writer = new StreamWriter(fileName);
+            ser.Serialize(writer, Document);
+            writer.Close();
+        }
 
     }
 }

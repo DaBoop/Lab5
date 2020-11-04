@@ -1,9 +1,9 @@
-29.10.2020 05:06  INFO: System.GiftAction	Added Tiramisu		
-29.10.2020 05:06  INFO: System.GiftAction	Added Tulip		
-29.10.2020 05:06  INFO: System.GiftAction	Added Datejust		
-29.10.2020 05:06  INFO: System.GiftAction	Added Toffee		
-29.10.2020 05:06  INFO: System.GiftAction	Sorted		
-29.10.2020 05:06  INFO: System.NegativeAmountException	amount is less than n		Void Remove(Int32)
-29.10.2020 05:06  INFO: System.ArgumentException	Not enough money (Parameter 'money')		Int32 Sell(Int32)
-29.10.2020 05:06  INFO: System.ArgumentException	n must be positive (Parameter 'n')		Void Add(Int32)
-29.10.2020 05:06  INFO: System.EmptyListException	List can not be printed because it's empty		Void print()
+05.11.2020 02:25  INFO: System.GiftAction	Added Tiramisu		
+05.11.2020 02:25  INFO: System.GiftAction	Added Tulip		
+05.11.2020 02:25  INFO: System.GiftAction	Added Datejust		
+05.11.2020 02:25  INFO: System.GiftAction	Added Toffee		
+05.11.2020 02:25  INFO: System.GiftAction	Sorted		
+05.11.2020 02:25  INFO: System.NegativeAmountException	amount is less than n		Void Remove(Int32)
+05.11.2020 02:25  INFO: System.ArgumentException	Not enough money (Parameter 'money')		Int32 Sell(Int32)
+05.11.2020 02:25  INFO: System.ArgumentException	n must be positive (Parameter 'n')		Void Add(Int32)
+05.11.2020 02:25  INFO: System.EmptyListException	List can not be printed because it's empty		Void print()

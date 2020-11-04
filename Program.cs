@@ -211,6 +211,8 @@ namespace Lab5
             }
             intList.ToFile(folder + "\\intlist.txt");
             intList.ToJson(folder + "\\intlist.json");
+
+            intList.toXML(folder + "\\xmllist.xml");
         }
         
     }
