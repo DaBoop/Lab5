@@ -8,7 +8,10 @@ namespace Lab5
     [Serializable]
     class Gift : IEnumerable<Goods>
     {
+        
         public Logger logger = new Logger();
+
+
         List<Goods> list = new List<Goods>();
         public int Count { get => list.Count; }
         public Goods this[int index]
